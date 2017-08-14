@@ -18,6 +18,7 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
     private final static int PAUSE_TIME = 2000;
+    private final static int RELEASE_TIME = 1000;
 
     private GetQuestionsAsyncTask mAsyncTask;
     private List<Question> mQuestionList;
@@ -113,7 +114,6 @@ public class MainActivity extends AppCompatActivity {
                 next();
             }
         }, PAUSE_TIME);
-
     }
 
     private void startPendingIncorrectTask(final Button button) {
@@ -140,8 +140,7 @@ public class MainActivity extends AppCompatActivity {
                 buttonsEnabled(true);
                 bindQuestion();
             }
-        }, 1000L);
-
+        }, RELEASE_TIME);
     }
 
     private void buttonsEnabled(boolean enabled) {
