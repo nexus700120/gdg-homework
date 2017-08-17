@@ -24,12 +24,10 @@ public class MainActivity extends AppCompatActivity {
     private List<Question> mQuestionList;
     private int mQuestIndex = 0;
     private int mCorrectAnswers = 0;
-    private int mIncorrectAnswers = 0;
 
     private TextView mQuestionView;
     private List<Button> mButtonList = new ArrayList<>();
-    private TextView mCorrectTextView;
-    private TextView mIncorrectTextView;
+    private TextView mCorrectCounterTextView;
     private Handler mHandler = new Handler(Looper.getMainLooper());
 
     @Override
@@ -44,8 +42,7 @@ public class MainActivity extends AppCompatActivity {
         mButtonList.add((Button) findViewById(R.id.button_3));
         mButtonList.add((Button) findViewById(R.id.button_4));
 
-        mCorrectTextView = (TextView) findViewById(R.id.correct_answer);
-        mIncorrectTextView = (TextView) findViewById(R.id.incorrect_answer);
+        mCorrectCounterTextView = (TextView) findViewById(R.id.correct_answer_counter);
         updateCounters();
 
         mAsyncTask = new GetQuestionsAsyncTask(getAssets(),
@@ -111,6 +108,7 @@ public class MainActivity extends AppCompatActivity {
             public void run() {
                 button.getBackground().setColorFilter(Color.GREEN, PorterDuff.Mode.MULTIPLY);
                 mCorrectAnswers++;
+                updateCounters();
                 next();
             }
         }, PAUSE_TIME);
@@ -121,7 +119,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void run() {
                 button.getBackground().setColorFilter(Color.RED, PorterDuff.Mode.MULTIPLY);
-                mIncorrectAnswers++;
+                mCorrectAnswers = 0;
+                updateCounters();
                 next();
             }
         }, PAUSE_TIME);
@@ -132,7 +131,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void run() {
                 resetButtonsColors();
-                updateCounters();
                 mQuestIndex++;
                 if (mQuestIndex >= mQuestionList.size()) {
                     return;
@@ -157,7 +155,6 @@ public class MainActivity extends AppCompatActivity {
 
     @SuppressLint("DefaultLocale")
     private void updateCounters() {
-        mCorrectTextView.setText(String.format("ПРАВИЛЬНО %d", mCorrectAnswers));
-        mIncorrectTextView.setText(String.format("НЕПРАВИЛЬНО %d", mIncorrectAnswers));
+        mCorrectCounterTextView.setText(String.format("Правильных ответов: %d", mCorrectAnswers));
     }
 }
