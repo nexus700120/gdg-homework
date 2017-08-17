@@ -1,9 +1,8 @@
 package com.gdg.homework;
 
-import android.graphics.Point;
+import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
@@ -57,7 +56,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 add(5);
                 break;
             case R.id.clear:
-                mResultTextView.setText("");
+                mResultTextView.setText("0");
                 break;
         }
     }
