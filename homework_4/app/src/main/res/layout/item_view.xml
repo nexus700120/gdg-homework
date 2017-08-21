@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:padding="16dp">
+
+    <TextView
+        android:id="@+id/morn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Утро: -3"/>
+
+    <TextView
+        android:id="@+id/day"
+        android:layout_below="@id/morn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="День: -1"/>
+
+    <TextView
+        android:id="@+id/eve"
+        android:layout_below="@id/day"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Вечер: +1"/>
+
+    <TextView
+        android:id="@+id/night"
+        android:layout_below="@id/eve"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Ночь: +1"/>
+
+    <TextView
+        android:id="@+id/date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        tools:ignore="RelativeOverlap,RtlHardcoded"
+        tools:text="23.02.2016"/>
+
+</RelativeLayout>
