@@ -41,8 +41,6 @@ class ProgressView : FrameLayout {
     private fun init() {
         addProgressView()
         addErrorView()
-
-
     }
 
     fun setOnRetryListener(lambda: (() -> Unit)?) {
@@ -50,8 +48,7 @@ class ProgressView : FrameLayout {
     }
 
     fun isProgressVisible() = progressView?.visibility == View.VISIBLE
-
-
+    
     private fun addProgressView() {
         progressView = ProgressBar(context)
         val params = FrameLayout.LayoutParams(FrameLayout.LayoutParams.WRAP_CONTENT,
