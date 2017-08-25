@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="SmallButton">
+        <attr name="sb_textSize" format="dimension"/>
+        <attr name="drawableLeftColor" format="color"/>
+    </declare-styleable>
+</resources>

@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">CryptoCurrencies</string>
+    <string name="btn.common.retry">Retry</string>
+    <string name="error.cant.load.data">Cannot load data</string>
+</resources>
