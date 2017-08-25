@@ -25,7 +25,6 @@ class CurrencyListAdapter: RecyclerView.Adapter<CurrencyListAdapter.CurrencyView
 
     private val requestOptions = RequestOptions()
             .circleCrop()
-
             .error(R.drawable.ic_currency_placeholder)
             .placeholder(R.drawable.ic_currency_placeholder)
 
@@ -36,21 +35,16 @@ class CurrencyListAdapter: RecyclerView.Adapter<CurrencyListAdapter.CurrencyView
 
     override fun getItemCount(): Int = items.size
 
-    override fun onBindViewHolder(holder: CurrencyViewHolder, position: Int) {
-        holder.bind(items[position])
-    }
+    override fun onBindViewHolder(holder: CurrencyViewHolder, position: Int) =
+            holder.bind(items[position])
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CurrencyViewHolder =
             CurrencyViewHolder(LayoutInflater.from(parent.context)
                     .inflate(R.layout.currenci_list_item, parent, false))
 
-    fun pauseImagesLoading() {
-        requestManager.pauseRequests()
-    }
+    fun pauseImagesLoading() = requestManager.pauseRequests()
 
-    fun resumeImagesLoading() {
-        requestManager.resumeRequests()
-    }
+    fun resumeImagesLoading() = requestManager.resumeRequests()
 
     inner class CurrencyViewHolder(private val view: View): RecyclerView.ViewHolder(view) {
 

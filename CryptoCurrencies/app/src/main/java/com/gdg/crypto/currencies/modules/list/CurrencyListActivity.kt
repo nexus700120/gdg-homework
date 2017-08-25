@@ -110,5 +110,4 @@ class CurrencyListActivity : AppCompatActivity() {
         disposable.safeDispose()
         super.onDestroy()
     }
-
 }

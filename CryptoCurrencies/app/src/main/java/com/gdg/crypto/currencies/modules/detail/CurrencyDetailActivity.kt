@@ -38,7 +38,6 @@ class CurrencyDetailActivity : AppCompatActivity() {
     private val fiatCurrency = "EUR"
     private val fiatCurrencySymbol = "€"
 
-
     private var disposable: Disposable? = null
 
     private lateinit var rateContainer: View
@@ -91,7 +90,6 @@ class CurrencyDetailActivity : AppCompatActivity() {
 
         share = findViewById(R.id.share)
         share.setOnClickListener { share() }
-
     }
 
     private fun getFinancialData(cryptoCurrency: String, isRetry: Boolean) {
@@ -107,9 +105,7 @@ class CurrencyDetailActivity : AppCompatActivity() {
                 .subscribe({
                     progressView.hideProgress(true)
                     onDataReceived(cryptoCurrency, it)
-                }, {
-                    progressView.error(getString(R.string.error_cant_load_data))
-                })
+                }, { progressView.error(getString(R.string.error_cant_load_data)) })
     }
 
     private fun onDataReceived(cryptoCurrency: String, data: Pair<Map<String, Float>, HistoryResponse>) {
@@ -184,5 +180,4 @@ class CurrencyDetailActivity : AppCompatActivity() {
         sendIntent.type = "text/plain"
         startActivity(sendIntent)
     }
-
 }
