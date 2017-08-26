@@ -76,7 +76,7 @@ class CurrencyListActivity : AppCompatActivity() {
                 .subscribeOn(Schedulers.io())
                 .flatMap { res ->
                     Single.just(res.currencies?.values?.toList()
-                            ?.sortedBy { it.sortOrder?.toInt() }
+                            ?.sortedBy { it.sortOrder?.toIntOrNull() }
                             ?.map {
                                 it.apply {
                                     imageUrl = res.baseImageUrl + it.imageUrl

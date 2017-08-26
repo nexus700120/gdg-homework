@@ -143,7 +143,7 @@ class CurrencyDetailActivity : AppCompatActivity() {
         val entries = mutableListOf<Entry>()
         res.data?.sortedBy { it.time }
                 ?.forEachIndexed { index, historyItem ->
-                    entries.add(BarEntry(index.toFloat(), historyItem.close ?: 0F))
+                    entries.add(Entry(index.toFloat(), historyItem.close ?: 0F))
                 }
 
         val set = LineDataSet(entries, null)
