@@ -6,12 +6,14 @@ import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.view.MenuItem
+import com.crashlytics.android.Crashlytics
 import com.gdg.crypto.currencies.R
 import com.gdg.crypto.currencies.api.Api
 import com.gdg.crypto.currencies.ext.safeDispose
 import com.gdg.crypto.currencies.modules.detail.CurrencyDetailActivity
 import com.gdg.crypto.currencies.modules.detail.domain.CurrencyExtras
 import com.gdg.crypto.currencies.widgets.ProgressView
+import io.fabric.sdk.android.Fabric
 import io.reactivex.Single
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable

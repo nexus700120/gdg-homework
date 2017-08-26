@@ -180,4 +180,9 @@ class CurrencyDetailActivity : AppCompatActivity() {
         sendIntent.type = "text/plain"
         startActivity(sendIntent)
     }
+
+    override fun onDestroy() {
+        disposable.safeDispose()
+        super.onDestroy()
+    }
 }
